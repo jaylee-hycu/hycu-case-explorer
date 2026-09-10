@@ -11,6 +11,34 @@ function lawSearchUrl(caseNo) {
   return base + encodeURIComponent(caseNo || '')
 }
 
+const PAGE_SIZE = 20
+const SUMMARY_MAX = 40
+
+function truncate(text, n) {
+  if (!text) return ''
+  return text.length > n ? text.slice(0, n) + '…' : text
+}
+
+// 현재 페이지 주변 + 처음/끝만 보여주고 나머지는 "..." 로 생략
+function buildPageList(current, total) {
+  const pages = []
+  const add = (p) => { if (!pages.includes(p)) pages.push(p) }
+  add(1)
+  for (let p = current - 1; p <= current + 1; p++) {
+    if (p > 1 && p < total) add(p)
+  }
+  if (total > 1) add(total)
+  pages.sort((a, b) => a - b)
+  const withGaps = []
+  let prev = 0
+  for (const p of pages) {
+    if (prev && p - prev > 1) withGaps.push('...')
+    withGaps.push(p)
+    prev = p
+  }
+  return withGaps
+}
+
 export default function App() {
   const [data, setData] = useState(null)
   const [activeTab, setActiveTab] = useState(TABS[0].key)
@@ -18,6 +46,7 @@ export default function App() {
   const [category, setCategory] = useState('전체')
   const [courtType, setCourtType] = useState('전체')
   const [sortDir, setSortDir] = useState('desc')
+  const [page, setPage] = useState(1)
 
   useEffect(() => {
     fetch('/data/cases.json')
@@ -56,6 +85,15 @@ export default function App() {
     })
     return list
   }, [rows, query, category, courtType, sortDir])
+
+  useEffect(() => {
+    setPage(1)
+  }, [activeTab, query, category, courtType, sortDir])
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE))
+  const currentPage = Math.min(page, totalPages)
+  const pageRows = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE)
+  const pageList = buildPageList(currentPage, totalPages)
 
   return (
     <div className="app">
@@ -111,7 +149,9 @@ export default function App() {
       </div>
 
       <p className="result-count">
-        {data ? `총 ${filtered.length.toLocaleString('ko-KR')}건 (전체 ${rows.length.toLocaleString('ko-KR')}건 중)` : '데이터 불러오는 중...'}
+        {data
+          ? `총 ${filtered.length.toLocaleString('ko-KR')}건 (전체 ${rows.length.toLocaleString('ko-KR')}건 중) · ${currentPage}/${totalPages} 페이지`
+          : '데이터 불러오는 중...'}
       </p>
 
       <div className="table-wrap">
@@ -130,7 +170,7 @@ export default function App() {
             </tr>
           </thead>
           <tbody>
-            {filtered.map((r, i) => (
+            {pageRows.map((r, i) => (
               <tr key={r.file || i}>
                 <td className="nowrap"><span className="badge">{r.category}</span></td>
                 <td className="nowrap">{r.caseNoID}</td>
@@ -138,7 +178,7 @@ export default function App() {
                 <td className="nowrap">{r.courtType}</td>
                 <td className="nowrap">{r.judmnAdjuDe}</td>
                 <td>{r.caseNm}</td>
-                <td className="jdgmn-cell">{r.jdgmn}</td>
+                <td className="jdgmn-cell" title={r.jdgmn}>{truncate(r.jdgmn, SUMMARY_MAX)}</td>
                 <td>{r.keyword}</td>
                 <td className="nowrap">
                   <a className="link-btn" href={lawSearchUrl(r.caseNoID)} target="_blank" rel="noreferrer">
@@ -150,6 +190,38 @@ export default function App() {
           </tbody>
         </table>
       </div>
+
+      {totalPages > 1 && (
+        <nav className="pagination" aria-label="페이지 이동">
+          <button
+            className="page-btn"
+            disabled={currentPage <= 1}
+            onClick={() => setPage(currentPage - 1)}
+          >
+            이전
+          </button>
+          {pageList.map((p, i) =>
+            p === '...' ? (
+              <span key={`gap-${i}`} className="page-gap">…</span>
+            ) : (
+              <button
+                key={p}
+                className={'page-btn' + (p === currentPage ? ' active' : '')}
+                onClick={() => setPage(p)}
+              >
+                {p}
+              </button>
+            )
+          )}
+          <button
+            className="page-btn"
+            disabled={currentPage >= totalPages}
+            onClick={() => setPage(currentPage + 1)}
+          >
+            다음
+          </button>
+        </nav>
+      )}
 
       <p className="footer-note">
         출처: AI Hub(aihub.or.kr) &quot;법률-규정 텍스트 분석 데이터(고도화)&quot;. 사건명(caseNm) 키워드 매칭 기반 선별로, 본문 전체를
