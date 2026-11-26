@@ -24,7 +24,7 @@
    "defectTotal": 8904143672,
    "awardedTotal": 7257709190,
    "verify": "확정",
-   "note": "3,435세대 아파트. 집계 8,904,143,672원 중 채권양도 95.74% 해당분에 85% 적용(분양자 인정액)."
+   "note": "3,435세대 아파트. 집계 8,904,143,672원 중 채권양도 95.74% 해당분에 85% 적용(분양자 인정액). 항소심 2024나2038361과 동일 분쟁(심급 쌍)."
   },
   {
    "caseNoID": "2022나2003484",
@@ -47,10 +47,10 @@
    "caseNm": "하자보수보증금등",
    "precId": "617231",
    "liabilityPct": 80,
-   "defectTotal": null,
-   "awardedTotal": null,
-   "verify": "검증필요",
-   "note": "이전 세션에서 전문 정독한 내용을 요약 기록에서 옮김. 원문 재대조 전."
+   "defectTotal": 891287044,
+   "awardedTotal": 670319890,
+   "verify": "확정",
+   "note": "원문 전문 재대조 완료. 하자보수비 집계 891,287,044원, 채권양도 94.1465% 해당분 인정액(책임제한 전) 837,899,863원에 80% 적용 670,319,890원(분양자 기준). 보증공사 별도 274,551,627원. 판결문 내 기재 불일치(보증공사 표 70% 표기, 부착강도 수치)는 정정하지 않고 그대로 기록."
   },
   {
    "caseNoID": "2024나2038361",
@@ -60,10 +60,10 @@
    "caseNm": "손해배상(기)",
    "precId": "625383",
    "liabilityPct": 85,
-   "defectTotal": null,
-   "awardedTotal": null,
-   "verify": "검증필요",
-   "note": "[추정] 2021가합511923의 항소심(선보수비·조경수 수치 일치 근거). 이전 세션 요약에서 옮김, 원문 재대조 전."
+   "defectTotal": 7561862022,
+   "awardedTotal": 6163203411,
+   "verify": "확정",
+   "note": "원문 전문 재대조 완료. 2021가합511923의 항소심(판결문 상단 제1심판결 표기로 확인). 하자보수비 합계 7,561,862,022원(피고 항소범위 반영), 채권양도세대 7,250,827,543원에 85% 적용 6,163,203,411원(피고 △△△). ◇◇◇·보증공사 공동 3,303,946,657원, 보증공사 단독 137,184,108원. 주의: 2021가합511923과 동일 분쟁의 심급 쌍이므로 합산·비율 통계에서 이중계상 금지."
   }
  ],
  "items": [
@@ -521,7 +521,7 @@
    "awardedAmt": 196983805,
    "courtResult": "법원 수정",
    "note": "감정 805,875,586원 중 196,983,805원만 인정.",
-   "verify": "검증필요"
+   "verify": "확정"
   },
   {
    "caseNoID": "2019가합591124",
@@ -529,11 +529,11 @@
    "title": "손해액 책임제한 80%",
    "type": "책임제한",
    "appraiserCorrected": false,
-   "appraisedAmt": null,
-   "awardedAmt": null,
+   "appraisedAmt": 837899863,
+   "awardedAmt": 670319890,
    "courtResult": "해당 없음",
-   "note": "책임제한 80%.",
-   "verify": "검증필요"
+   "note": "인정액(책임제한 전) 837,899,863원 × 80% = 670,319,890원.",
+   "verify": "확정"
   },
   {
    "caseNoID": "2019가합591124",
@@ -544,8 +544,8 @@
    "appraisedAmt": null,
    "awardedAmt": null,
    "courtResult": "해당 없음",
-   "note": "2,610,470원·474,196원 소멸.",
-   "verify": "검증필요"
+   "note": "2,610,470원 및 474,196원 소멸.",
+   "verify": "확정"
   },
   {
    "caseNoID": "2019가합591124",
@@ -556,32 +556,32 @@
    "appraisedAmt": null,
    "awardedAmt": null,
    "courtResult": "해당 없음",
-   "note": "판결문 내 표가 70%로 계산되어 본문 책임제한 비율과 불일치.",
-   "verify": "검증필요"
+   "note": "판결문 내 보증공사 표에 책임제한 금액(70%)으로 계산·표기되어 본문 80%와 불일치. 부착강도 수치(0.0187/0.0087MPa)도 판결문 내 표기가 다름. 판결문 기재 그대로 기록, 정정하지 않음.",
+   "verify": "확정"
   },
   {
    "caseNoID": "2024나2038361",
    "itemNo": "공용 100",
    "title": "공용부 선보수비",
    "type": "선보수비",
-   "appraiserCorrected": false,
+   "appraiserCorrected": true,
    "appraisedAmt": 449113490,
    "awardedAmt": 350190180,
-   "courtResult": "법원 수정",
-   "note": "1심 인정액에서 감액.",
-   "verify": "검증필요"
+   "courtResult": "감정인 정정 반영",
+   "note": "선보수 증빙은 인정하되, 감정인이 간접비·부가가치세 중복산정 오류를 인정해 449,113,490원을 350,190,180원으로 재산정(2025. 4. 22.자 사실조회회신). 1심은 감정액 그대로 인정.",
+   "verify": "확정"
   },
   {
    "caseNoID": "2024나2038361",
    "itemNo": "전유 39",
    "title": "전유부 선보수비",
    "type": "선보수비",
-   "appraiserCorrected": false,
+   "appraiserCorrected": true,
    "appraisedAmt": 30009600,
    "awardedAmt": 23342000,
-   "courtResult": "법원 수정",
-   "note": "1심 인정액에서 감액.",
-   "verify": "검증필요"
+   "courtResult": "감정인 정정 반영",
+   "note": "간접비·부가가치세 중복산정 오류를 인정해 30,009,600원을 23,342,000원으로 재산정. 원고의 추가 선하자보수액 329,580,460원 주장은 증거 부족으로 배척. 1심은 감정액 그대로 인정.",
+   "verify": "확정"
   },
   {
    "caseNoID": "2024나2038361",
@@ -591,9 +591,9 @@
    "appraiserCorrected": false,
    "appraisedAmt": 233600152,
    "awardedAmt": null,
-   "courtResult": "미확인",
-   "note": "철거 재시공 233,600,152원 대 에폭시 12,106,531원이 쟁점. 결과는 원문 재대조 필요.",
-   "verify": "검증필요"
+   "courtResult": "법원 수정",
+   "note": "철거 후 재시공 233,600,152원 대신 저가 보수공법(저점도 에폭시 주입, 감정인 산정 12,106,531원) 채택 취지로 감액 인정. 판결문은 최종 인정액을 12,106,531원으로 명시하지 않아 인정액 칸은 비움.",
+   "verify": "확정"
   },
   {
    "caseNoID": "2024나2038361",
@@ -604,68 +604,68 @@
    "appraisedAmt": 211702524,
    "awardedAmt": 188855463,
    "courtResult": "법원 수정",
-   "note": "추가식재비 22,847,061원 공제.",
-   "verify": "검증필요"
+   "note": "감정액 211,702,524원에서 추가식재비 22,847,061원 공제한 188,855,463원 인정. 시공·관리 책임 구분 곤란은 책임제한 단계에서 고려.",
+   "verify": "확정"
   },
   {
    "caseNoID": "2024나2038361",
    "itemNo": "공용 172",
-   "title": "(항목명 재대조 필요)",
+   "title": "착공도면 대비 지하1층 주차장 급기휀 설치수량 변경시공",
    "type": "도면·기준 해석",
    "appraiserCorrected": false,
    "appraisedAmt": null,
    "awardedAmt": null,
    "courtResult": "감정 불채택",
-   "note": "하자 제외.",
-   "verify": "검증필요"
+   "note": "감정인은 착공도면 36개 대 준공도면 6개를 변경시공 하자로 판단했으나, 준공도면과 동일 시공이고 설계자가 설계오류 정정(급기휀 6개·배기휀 30개) 회신해 하자 제외.",
+   "verify": "확정"
   },
   {
    "caseNoID": "2024나2038361",
    "itemNo": "공용 141",
-   "title": "(항목명 재대조 필요)",
-   "type": "도면·기준 해석",
+   "title": "각 동 계단실·E/V홀 무늬코트 상도 미시공",
+   "type": "판정방법 한계",
    "appraiserCorrected": false,
    "appraisedAmt": null,
    "awardedAmt": null,
    "courtResult": "감정 불채택",
-   "note": "하자 제외. 1심은 감액 재산정 후 인정.",
-   "verify": "검증필요"
+   "note": "감정인 시료분석상 상도층 존재 추정, 사용승인 약 6년 후 조사로 노후화 가능성을 들어 하자 제외(피고 주위적 주장 인용). 1심은 벽체 면적 감액 재산정 후 인정.",
+   "verify": "확정"
   },
   {
    "caseNoID": "2024나2038361",
    "itemNo": "공용 155",
-   "title": "(항목명 재대조 필요)",
+   "title": "지하주차장·휀룸 바닥 무근콘크리트 두께 부족",
    "type": "도면·기준 해석",
    "appraiserCorrected": false,
    "appraisedAmt": null,
    "awardedAmt": null,
    "courtResult": "감정 불채택",
-   "note": "하자 제외. 1심은 감액 재산정 후 인정.",
-   "verify": "검증필요"
+   "note": "감정인은 기준 200㎜로 판단했으나 실내재료마감표(방수층·마감 포함 치수) 기준 시공두께 168.75㎜로 충족, 하자 제외. 1심은 면적 산출 오류 감액 후 인정.",
+   "verify": "확정"
   },
   {
    "caseNoID": "2024나2038361",
    "itemNo": "공용 156",
-   "title": "(항목명 재대조 필요)",
+   "title": "지하 PIT 바닥 무근콘크리트 두께 부족",
    "type": "도면·기준 해석",
    "appraiserCorrected": false,
    "appraisedAmt": null,
    "awardedAmt": null,
    "courtResult": "감정 불채택",
-   "note": "하자 제외. 1심은 감정 유지.",
-   "verify": "검증필요"
+   "note": "PIT 두께 기준 미명기, 설계자 회신 최소 50㎜ 대비 시공 95㎜로 충족, 하자 제외. 1심은 감정 유지.",
+   "verify": "확정"
   },
   {
    "caseNoID": "2024나2038361",
    "itemNo": "전유 41",
-   "title": "(항목명 재대조 필요)",
+   "title": "세대 목문 손끼임 방지 미시공",
    "type": "도면·기준 해석",
    "appraiserCorrected": false,
    "appraisedAmt": null,
    "awardedAmt": null,
    "courtResult": "감정 불채택",
-   "note": "하자 제외. 1심은 감정 유지.",
-   "verify": "검증필요"
+   "note": "준공도면·시방서에 지시 없고 구 실내건축 기준은 건축심의 접수 시점상 적용되지 않아 하자 제외(감정인도 중요하지 않은 하자로 분류). 1심은 감정 유지.",
+   "verify": "확정"
   },
   {
    "caseNoID": "2024나2038361",
@@ -673,11 +673,11 @@
    "title": "손해액 책임제한 85%",
    "type": "책임제한",
    "appraiserCorrected": false,
-   "appraisedAmt": null,
-   "awardedAmt": null,
+   "appraisedAmt": 7250827543,
+   "awardedAmt": 6163203411,
    "courtResult": "해당 없음",
-   "note": "책임제한 85%.",
-   "verify": "검증필요"
+   "note": "채권양도세대 하자보수비 7,250,827,543원에 85% 적용 6,163,203,411원.",
+   "verify": "확정"
   }
  ]
 }

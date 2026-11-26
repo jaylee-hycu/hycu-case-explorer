@@ -55,5 +55,6 @@ vercel --prod
 - 원본 데이터: `data_src/appraisal_cases.csv`, `data_src/appraisal_items.csv` (엑셀에서 열어 행을 추가·수정, UTF-8 저장)
 - 변환: `python tools/build_appraisal.py` → `public/data/appraisal.json` 생성
 - 후보 문장 추출: `python tools/extract_appraisal_sentences.py <판결문 txt 폴더> <출력.csv>` (라벨은 사람이 붙임)
-- `verify` 열: `확정`은 판결문 전문과 직접 대조한 행, `검증필요`는 원문 재대조 전
+- `verify` 열: `확정`은 판결문 전문과 직접 대조한 행, `검증필요`는 원문 재대조 전. v4 기준 5개 사건 51행 모두 `확정`.
+- 주의: 2021가합511923(1심)과 2024나2038361(항소심)은 동일 분쟁의 심급 쌍이라 합산 통계에서 이중 집계됨. 같은 항목(공용141·155 등)이 심급 간 판단이 뒤집힌 사례임
 - 비율은 표본 안에서의 비율이며 시장 전체의 감정 오류율이 아닙니다
