@@ -1,9 +1,11 @@
 import { useEffect, useMemo, useState } from 'react'
+import Appraisal from './Appraisal.jsx'
 
 const TABS = [
   { key: 'construction_all', label: '건설관련 전체' },
   { key: 'construction_subset', label: '건설(행정·기업·형사)' },
   { key: 'narrow_realestate', label: '부동산 좁은범위' },
+  { key: 'appraisal', label: '감정 쟁점 코딩', noCount: true },
 ]
 
 function lawSearchUrl(caseNo) {
@@ -116,11 +118,15 @@ export default function App() {
               setCourtType('전체')
             }}
           >
-            {t.label} ({data?.[t.key]?.rows.length ?? '…'})
+            {t.noCount ? t.label : `${t.label} (${data?.[t.key]?.rows.length ?? '…'})`}
           </button>
         ))}
       </div>
 
+      {activeTab === 'appraisal' ? (
+        <Appraisal />
+      ) : (
+        <>
       <div className="controls">
         <input
           type="text"
@@ -228,6 +234,8 @@ export default function App() {
         정독한 결과가 아닙니다. &quot;원문 검색&quot; 링크는 국가법령정보센터(law.go.kr) 판례 검색 페이지로 이동하며 사건번호를
         검색어로 시도합니다 — 자바스크립트 기반 검색이라 결과가 바로 안 뜨면 사건번호를 검색창에 직접 붙여넣어 주세요.
       </p>
+        </>
+      )}
     </div>
   )
 }
